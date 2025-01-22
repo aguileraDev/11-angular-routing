@@ -1,5 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthenticateService } from '../../services/authenticate.service';
+import { IAuth } from '../../interfaces/auth.interface';
+import { filter, map, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +11,7 @@ import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  private authenticateService = inject(AuthenticateService);
   private formBuilder = inject(FormBuilder);
 
   public loginForm = this.formBuilder.group({
@@ -27,6 +31,15 @@ export class LoginComponent {
 
   submit(): void {
     if (this.loginForm.valid) {
+      this.authenticateService.execute(this.loginForm.getRawValue() as unknown as IAuth)
+      .pipe(
+        filter(result => result.token == null),
+        tap(result => console.log()),
+        map(result => true),
+        tap(result => console.log(result)),
+        switchMap(result => this.authenticateService.execute(this.loginForm.getRawValue() as unknown as IAuth))
+      )
+      .subscribe();
       console.log(this.loginForm.value);
     }
 
