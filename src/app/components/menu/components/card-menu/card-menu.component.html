@@ -1,0 +1,26 @@
+
+  <main class="card__wrapper">
+    <header class="card__header">
+      <h2 class="card__title">{{menu.name | uppercase}}</h2>
+      <p>Disponible los dias: {{menu.schedule}}</p>
+    </header>
+    <section class="card__content">
+      <h3>Platos:</h3>
+      <menu>
+        @for (dish of menu.dishes; track $index) {
+          <li>{{dish.name | titlecase}} - <small>{{dish.price | currency: 'USD'}}</small></li>
+        }
+      </menu>
+    </section>
+    <footer class="card__footer">
+      <div class="card__footer__item">
+        <button class="card__btn">Editar</button>
+        <button class="card__btn card__btn-delete">Borrar</button>
+      </div>
+<!--       <div class="card__footer__item">
+        <button class="card__btn">Ver mas</button>
+      </div> -->
+    </footer>
+  </main>
+
+
