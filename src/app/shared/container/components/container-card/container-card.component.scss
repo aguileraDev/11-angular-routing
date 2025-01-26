@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+
+.card{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+
+
+  &-cols-4{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &-cols-5{
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__item{
+    padding: .5rem 1rem;
+  }
+
+
+}
