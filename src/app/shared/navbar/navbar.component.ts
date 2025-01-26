@@ -15,7 +15,7 @@ export class NavbarComponent {
   links: Link[] =[
     {
       text:'inicio',
-      url:'',
+      url:'/dashboard/home',
       aria:''
     },
     {
@@ -25,17 +25,17 @@ export class NavbarComponent {
     },
     {
       text:'menus',
-      url:'',
+      url:'/dashboard/menu',
       aria:''
     },
     {
       text:'platos',
-      url:'',
+      url:'/dashboard/dishes',
       aria:''
     },
     {
       text:'ordenes',
-      url:'',
+      url:'/dashboard/orders',
       aria:''
     }
 
