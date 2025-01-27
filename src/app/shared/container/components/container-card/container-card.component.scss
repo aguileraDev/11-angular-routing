@@ -1,3 +1,5 @@
+@use '@ui/mixins.scss' as mixins;
+
 :host {
   display: block;
 }
@@ -12,15 +14,19 @@
 
 
   &-cols-4{
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 
   &-cols-5{
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 
   &__item{
     padding: .5rem 1rem;
+  }
+
+  &__btn{
+    @include mixins.primary-button(fit-content,.15rem, 0);
   }
 
 

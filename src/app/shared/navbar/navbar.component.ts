@@ -16,27 +16,27 @@ export class NavbarComponent {
     {
       text:'inicio',
       url:'/dashboard/home',
-      aria:''
+      aria:'Ir a la pagina principal'
     },
     {
       text:'clientes',
       url:'/dashboard/customer',
-      aria:''
+      aria:'Administrar clientes'
     },
     {
       text:'menus',
       url:'/dashboard/menu',
-      aria:''
+      aria:'Administrar menus'
     },
     {
       text:'platos',
       url:'/dashboard/dishes',
-      aria:''
+      aria:'Administrar platos'
     },
     {
       text:'ordenes',
       url:'/dashboard/orders',
-      aria:''
+      aria:'Administrar ordenes'
     }
 
   ]

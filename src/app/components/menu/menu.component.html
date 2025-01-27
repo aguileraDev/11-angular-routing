@@ -1,12 +1,1 @@
-<section class="menu">
-  <h1 class="menu__title">Menus</h1>
-  <section class="menu__content">
-    <article class="menu__card">
-      @let data = menus | async;
-      @for(item of data; track $index){
-        <app-card-menu [menu]="item"/>
-      }
-    </article>
-  </section>
-</section>
-
+<router-outlet/>
